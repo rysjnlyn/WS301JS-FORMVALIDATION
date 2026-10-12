@@ -1,0 +1,72 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 2rem 1rem;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #e8eefc, #f6f1ff);
+  color: #1f2937;
+}
+.card {
+  max-width: 560px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(31, 41, 55, 0.12);
+}
+h1 { margin: 0 0 .25rem; text-align: center; color: #2f3e9e; }
+
+
+.field { margin-bottom: 1.1rem; }
+label, .label { display: block; font-weight: 600; margin-bottom: .35rem; }
+input[type="text"], input[type="password"], input[type="date"], select, textarea {
+  width: 100%;
+  padding: .6rem .75rem;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color .2s, background .2s;
+}
+input:focus, select:focus, textarea:focus { outline: none; border-color: #4f63d8; }
+.hint { display: block; color: #6b7280; font-size: .8rem; margin-top: .25rem; }
+
+.radio-row { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+.radio-row label, .check { font-weight: 400; display: flex; gap: .4rem; align-items: center; }
+.check { align-items: flex-start; }
+
+.pw-row { display: flex; gap: .5rem; }
+
+
+.error { border-color: #dc2626 !important; background: #fef2f2; }
+.error-msg { display: block; color: #dc2626; font-size: .85rem; margin-top: .3rem; min-height: 0; }
+.group-error { outline: 2px solid #dc2626; outline-offset: 4px; border-radius: 6px; }
+.valid { border-color: #16a34a; }
+
+
+.buttons { display: flex; gap: .75rem; margin-top: 1.5rem; }
+button { cursor: pointer; font-size: 1rem; border-radius: 8px; padding: .65rem 1.2rem; border: none; }
+.primary { background: #4f63d8; color: #fff; flex: 1; }
+.primary:hover { background: #3f51b5; }
+.secondary { background: #e5e7eb; color: #1f2937; }
+.secondary:hover { background: #d1d5db; }
+.ghost { background: #eef0fb; color: #3f51b5; padding: 0 .9rem; }
+/* toggled with classList.toggle() while the password is visible */
+.ghost.active { background: #4f63d8; color: #fff; }
+
+
+.success {
+  margin-top: 1.25rem;
+  padding: .9rem 1rem;
+  background: #ecfdf5;
+  border: 2px solid #16a34a;
+  color: #166534;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+}
+.hidden { display: none; }
+
+@media (max-width: 480px) {
+  .card { padding: 1.25rem; }
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .page-note {
+            text-align: center;
+            color: #5b6475;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="card">
+        <h1>Student Registration</h1>
+        <p class="page-note">Fields marked * are required.</p>
+
+        <form id="regForm" novalidate>
+
+            <div class="field">
+                <label for="studentId">Student ID *</label>
+                <input type="text" id="studentId" name="studentId" placeholder="e.g. 2024-00123" data-label="Student ID" data-pattern-hint="YYYY-NNNNN">
+                <small class="error-msg" id="studentIdError"></small>
+            </div>
+
+            <div class="field">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Juan Dela Cruz" data-label="Full name">
+                <small class="error-msg" id="fullNameError"></small>
+            </div>
+
+            <div class="field">
+                <label for="email">Email *</label>
+                <input type="text" id="email" name="email" placeholder="juan@example.com" data-label="Email">
+                <small class="error-msg" id="emailError"></small>
+            </div>
+
+            <div class="field">
+                <label for="phone">Phone Number *</label>
+                <input type="text" id="phone" name="phone" placeholder="09XXXXXXXXX" data-label="Phone number">
+                <small class="hint">Format: 09 followed by 9 digits</small>
+                <small class="error-msg" id="phoneError"></small>
+            </div>
+
+            <div class="field">
+                <label for="dob">Date of Birth *</label>
+                <input type="date" id="dob" name="dob" data-label="Date of birth">
+                <small class="error-msg" id="dobError"></small>
+            </div>
+
+            <div class="field" id="genderGroup">
+                <span class="label">Gender *</span>
+                <div class="radio-row">
+                    <label><input type="radio" name="gender" value="Male"> Male</label>
+                    <label><input type="radio" name="gender" value="Female"> Female</label>
+                    <label><input type="radio" name="gender" value="Other"> Other</label>
+                </div>
+                <small class="error-msg" id="genderError"></small>
+            </div>
+
+            <div class="field">
+                <label for="program">Program *</label>
+                <select id="program" name="program" data-label="Program">
+          <option value="">-- Select program --</option>
+          <option value="BSIT">BS Information Technology</option>
+          <option value="BSCS">BS Computer Science</option>
+          <option value="BSED">BS Education</option>
+          <option value="BSBA">BS Business Administration</option>
+        </select>
+                <small class="error-msg" id="programError"></small>
+            </div>
+
+            <div class="field">
+                <label for="yearLevel">Year Level *</label>
+                <select id="yearLevel" name="yearLevel" data-label="Year level">
+          <option value="">-- Select year --</option>
+          <option value="1">1st Year</option>
+          <option value="2">2nd Year</option>
+          <option value="3">3rd Year</option>
+          <option value="4">4th Year</option>
+        </select>
+                <small class="error-msg" id="yearLevelError"></small>
+            </div>
+
+            <div class="field">
+                <label for="password">Password *</label>
+                <div class="pw-row">
+                    <input type="password" id="password" name="password" data-label="Password">
+                    <button type="button" id="togglePassword" class="ghost" data-target="password">Show</button>
+                </div>
+                <small class="hint">At least 8 characters, with a letter and a number</small>
+                <small class="error-msg" id="passwordError"></small>
+            </div>
+
+            <div class="field">
+                <label for="confirmPassword">Confirm Password *</label>
+                <div class="pw-row">
+                    <input type="password" id="confirmPassword" name="confirmPassword" data-label="Confirm password">
+                    <button type="button" id="toggleConfirm" class="ghost" data-target="confirmPassword">Show</button>
+                </div>
+                <small class="error-msg" id="confirmPasswordError"></small>
+            </div>
+
+            <div class="field">
+                <label for="address">Address *</label>
+                <textarea id="address" name="address" rows="3" data-label="Address"></textarea>
+                <small class="error-msg" id="addressError"></small>
+            </div>
+
+            <div class="field">
+                <label class="check">
+          <input type="checkbox" id="agreement" name="agreement">
+          I confirm the information above is correct and agree to the terms. *
+        </label>
+                <small class="error-msg" id="agreementError"></small>
+            </div>
+
+            <div class="buttons">
+                <button type="submit" class="primary">Submit</button>
+                <button type="reset" id="resetBtn" class="secondary">Reset</button>
+            </div>
+
+            <div id="successMessage" class="success hidden" role="status"></div>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
